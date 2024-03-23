@@ -22,7 +22,7 @@ class FileStorage():
     def all(self):
 
         """ Returns the dictionary __objects"""
-        return self.___objects
+        return (self.___objects)
 
     def new(self, obj):
 
