@@ -11,7 +11,6 @@ import uuid
 
 
 class BaseModel():
-
     """Defines all common attributes/methods for other classes"""
 
     def __init__(self, *args, **kwargs):
@@ -48,4 +47,4 @@ class BaseModel():
         my_dict["created_at"] = self.created_at.isoformat()
         my_dict["updated_at"] = self.updated_at.isoformat()
 
-        return my_dict
+        return (my_dict)
