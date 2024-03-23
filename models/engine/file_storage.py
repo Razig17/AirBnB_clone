@@ -35,7 +35,7 @@ class FileStorage():
         serialized_objects = {}
         for key, obj in self.__objects.items():
             serialized_objects[key] = obj.to_dict()
-        with open(self.__file_path, "w", encoding="UTF8") as file:
+        with open(self.__file_path,"w", encoding="UTF8") as file:
             json.dumps(serialized_objects, file)
 
     def reload(self):
@@ -46,5 +46,5 @@ class FileStorage():
                 FileStorage.__objects = {
                     obj_id: eval(obj_dict["__class__"])(**obj_dict)
                     for obj_id, obj_dict in objects_as_dict.items()}
-        except FileNotFoundError:
+        except FileNo   tFoundError:
             pass
