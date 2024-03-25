@@ -50,7 +50,6 @@ def split_curly_braces(e_arg):
             return f"{id}", f"{attr_name} {attr_value}"
 
 
-
 class HBNBCommand(cmd.Cmd):
     """HBNB class"""
 
@@ -245,6 +244,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("*** Unknown syntax: {}".format(arg))
             return False
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
