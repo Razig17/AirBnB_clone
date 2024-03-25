@@ -42,4 +42,4 @@ The ALX Airbnb Console is built on a command interpreter that allows users to in
 
 	syntax: `all [class name]` or `[class name].all()`
 
-	Ex: `$ all User` or `$ all` or `$User.all()`.
+	Ex: `$ all User` or `$ all` or `$ User.all()`.
