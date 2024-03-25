@@ -181,6 +181,29 @@ class HBNBCommand(cmd.Cmd):
                         setattr(objects[key], args[2], args[3])
                     objects[key].save()
 
+    def do_count(self, line):
+        """Counts the number of instances of a class"""
+
+        objects = storage.all()
+
+        commands = shlex.split(line)
+
+        if line:
+            class_name = commands[0]
+
+        count = 0
+
+        if commands:
+            if class_name in self.classes:
+                for obj in objects.values():
+                    if obj.__class__.__name__ == class_name:
+                        count += 1
+                print(count)
+            else:
+                print("** invalid class name **")
+        else:
+            print("** class name missing **")
+
     def default(self, arg):
         """
         Default behavior for cmd module when input is invalid
@@ -199,7 +222,8 @@ class HBNBCommand(cmd.Cmd):
                 'all': self.do_all,
                 'show': self.do_show,
                 'destroy': self.do_destroy,
-                'update': self.do_update
+                'update': self.do_update,
+                'count': self.do_count
                 }
 
         if cmd_met in method_dict.keys():
