@@ -4,6 +4,7 @@
 import cmd
 import shlex
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 
 
@@ -11,7 +12,7 @@ class HBNBCommand(cmd.Cmd):
     """HBNB class"""
 
     prompt = "(hbnb)"
-    classes = {"BaseModel"}
+    classes = {"BaseModel", "User"}
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
